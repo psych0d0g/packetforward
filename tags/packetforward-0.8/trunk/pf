@@ -1,1 +1,0 @@
-packetforward -i en1 -I tap0 -f 'udp port 6112 and dst host 255.255.255.255'
