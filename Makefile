@@ -1,9 +1,16 @@
+# packetforward - Makefile
+
+CC = gcc
+INCLUDE = -I/usr/include
+LIBS = -L/usr/lib -lpcap `libnet-config --defines --cflags --libs`
+INSTALL_DIR = /usr/bin
+
 all: 
-	gcc packetforward.c -o packetforward -I/usr/include -L/usr/lib -lpcap `libnet-config --defines --cflags --libs`
+	$(CC) packetforward.c -o packetforward $(INCLUDE) $(LIBS)
 	
 install:
-	cp -f packetforward /usr/bin/packetforward
+	cp -f packetforward $(INSTALL_DIR)/packetforward
 	
 clean:
-	rm -f /usr/bin/packetforward
+	rm -f $(INSTALL_DIR)/packetforward
 	

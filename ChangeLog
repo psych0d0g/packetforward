@@ -1,6 +1,6 @@
-PACKETFORWARD 0.8
+PACKETFORWARD 0.8.1
 -----------------
-Copyright @ 2007 by Micky Holdorf
+Copyright @ 2008 by Micky Holdorf
 Contact: micky.holdorf@gmail.com
 
 
@@ -11,6 +11,10 @@ Todo
 
 Versions
 --------
+0.8.1:
+Changed the makefile for easy configuration.
+Corrected minor errors in the readme file related to getting libnet.
+
 0.8:
 New option to set PacketForward in packet capture mode only.
 

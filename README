@@ -1,6 +1,6 @@
-PACKETFORWARD 0.8
+PACKETFORWARD 0.8.1
 -----------------
-Copyright @ 2007 by Micky Holdorf
+Copyright @ 2008 by Micky Holdorf
 Contact: micky.holdorf@gmail.com
 
 
@@ -11,14 +11,14 @@ PacketForward is an IP packet capture/forward application based on libpcap and l
 
 Supported Platforms
 -------------------
-PakcetForward has been compiled and tested on Mac OS X 10.5.1 (Intel). But you are welcome to supply additional feedback if you compile and test it on other platforms succesfully. 
+PakcetForward has been compiled and tested on Mac OS X 10.5.1 (Intel). But you are welcome to supply additional feedback if you compile and test it on other platforms succesfully.
 
 Since PakcetForward is based on libpcap and libnet, it should be portable to most other BSD and UNIX systems.
 
 
 Compilation and installation
 ----------------------------
-In order to compile PacketForward, you must have libpcap and libnet 1.0.2a installed on your system. BSD systems like Mac OS X have libcap preinstalled. I recommend using DarwinPorts (http://darwinports.opendarwin.org) for the requirements. The DarwinPorts Project's main goal is to provide an easy way to install various open-source software products on the Darwin OS family (OpenDarwin, Mac OS X and Darwin).
+In order to compile PacketForward, you must have libpcap and libnet 1.0.2a installed on your system. BSD systems like Mac OS X have libpcap preinstalled. I recommend using MacPorts (http://www.macports.org/) for getting libnet. The MacPorts project's main goal is to provide an easy way to install various open-source software products on Mac OS X.
 
 cd to the directory of PacketForward.
 To compile, type:

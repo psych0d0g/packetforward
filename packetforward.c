@@ -1,6 +1,6 @@
 /*
  * packetforward.c
- * Copyright (c) 2007 by Micky Holdorf
+ * Copyright (c) 2008 by Micky Holdorf
  *
  */
 
@@ -8,9 +8,9 @@
 #include <libnet.h>
 #include "headers.h"
 
-#define APP_NAME		"PacketForward 0.8"
+#define APP_NAME		"PacketForward 0.8.1"
 #define APP_DESC		"IP packet capture and forward application based on libpcap and libnet."
-#define APP_COPYRIGHT	"Copyright (c) 2007 by Micky Holdorf"
+#define APP_COPYRIGHT	"Copyright (c) 2008 by Micky Holdorf"
 
 /* default snap length (maximum bytes per packet to capture) */
 #define SNAP_LEN 4096
