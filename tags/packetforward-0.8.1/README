@@ -1,0 +1,93 @@
+PACKETFORWARD 0.8.1
+-----------------
+Copyright @ 2008 by Micky Holdorf
+Contact: micky.holdorf@gmail.com
+
+
+Introduction
+------------
+PacketForward is an IP packet capture/forward application based on libpcap and libnet. It is a command line tool that listens on one network interface for UDP and TCP packets and then injects them on the same or another network interface. It has options for packet capture filtering and changing destination address.
+
+
+Supported Platforms
+-------------------
+PakcetForward has been compiled and tested on Mac OS X 10.5.1 (Intel). But you are welcome to supply additional feedback if you compile and test it on other platforms succesfully.
+
+Since PakcetForward is based on libpcap and libnet, it should be portable to most other BSD and UNIX systems.
+
+
+Compilation and installation
+----------------------------
+In order to compile PacketForward, you must have libpcap and libnet 1.0.2a installed on your system. BSD systems like Mac OS X have libpcap preinstalled. I recommend using MacPorts (http://www.macports.org/) for getting libnet. The MacPorts project's main goal is to provide an easy way to install various open-source software products on Mac OS X.
+
+cd to the directory of PacketForward.
+To compile, type:
+make
+
+To install (requires root access), type:
+sudo make install
+
+To uninstall (requires root access), type:
+sudo make clean
+
+A compiled Mac OS X (Intel) binary is supplied with this distribution. Just copy it to your system for easy access:
+sudo cp packetforward /usr/bin/packetforward
+
+
+Usage
+-----
+PacketForward will capture IP packets with TCP and UDP headers, show header info and content of payload.
+
+One of the uses of PacketForward is to forward packets from a physical to a virtual interface eg. the tun/tap interface for VPN networks. This is especially useful for games that do not broadcast on all interfaces but only use the default interface and you want to play games with a friend on the internet.
+
+usage:
+   packetforward <interface> [options]
+
+interface:
+   -i interface1      Capture packets from interface1.
+
+options:
+   -I interface2      Forward packets to interface2.
+   -d ip address      Destination ip address of forwarded packets.
+   -n number          Number of packets to capture.
+   -h                 Hide packet headers.
+   -p                 Hide payload.
+   -c                 Capture packets only.
+   -f 'filter'        Tcpdump packet filter expression.
+
+example:
+   sudo packetforward -i en1 -I tap0 -d 5.124.100.100 -f 'udp port 6112 and dst host 255.255.255.255'
+
+You must have root access to use PacketForward.
+
+In this example PacketForward will listen on the en1 network interface for UDP broadcast packets with dst and src port 6112, change the destination address to 5.124.100.100 and inject them on to the tap0 network interface. The src address is automatically changed to match the tap0 network interface.
+
+A small executable script is provided to ease usage of packetforward.
+When in the directory of the script start it by typing
+sudo ./pf
+
+
+Filter
+------
+PacketForward is using Tcpdump filter expressions. Below is some examples.
+
+ip                                      Capture all IP packets.
+udp                                     Capture only UDP packets.
+tcp                                     Capture only TCP packets.
+udp port 80                             Capture only UDP packets with src or dst port 80.
+ip host 10.1.2.3                        Capture all IP packets to or from host 10.1.2.3.
+udp dst port 80 and src host 10.1.2.3   Capture only UDP packets to port 80 from host 10.1.2.3.
+
+Read the Tcpdump man pages for more info on filter expressions.
+
+
+Download
+--------
+You can download PacketForward from:
+http://www.holdorf.dk/software/
+
+
+Thanks
+------
+Jakob Weitemeyer for discussion, ideas and testing PacketForward.
+
