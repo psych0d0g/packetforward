@@ -11,7 +11,7 @@ PacketForward is an IP packet capture/forward application based on libpcap and l
 
 Supported Platforms
 -------------------
-PakcetForward has been compiled and tested on Mac OS X 10.5.1 (Intel). But you are welcome to supply additional feedback if you compile and test it on other platforms succesfully.
+PacketForward has been compiled and tested on Mac OS X 10.5.1 (Intel). But you are welcome to supply additional feedback if you compile and test it on other platforms succesfully.
 
 Since PakcetForward is based on libpcap and libnet, it should be portable to most other BSD and UNIX systems.
 
